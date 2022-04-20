@@ -1,0 +1,50 @@
+package inheritance.java;
+
+import java.util.stream.Collector;
+
+public class Main {
+    public static void main(String[] args) {
+        Planet planet = new Planet();
+        System.out.println("Apakah planet IS-A Objek? -> " + (planet instanceof Object));
+        System.out.println("Apakah planet IS-A Planet? -> " + (planet instanceof Planet));
+        System.out.println("Apakah planet IS-A Mercury? -> " + (planet instanceof Mercury));
+        System.out.println("Apakah planet IS-A Jupiter? -> " + (planet instanceof Jupiter));
+
+        System.out.println("----------------------------------------");
+
+        Mercury mercury = new Mercury();
+        System.out.println("Apakah mercury IS-A Objek? -> " + (mercury instanceof Object));
+        System.out.println("Apakah mercury IS-A Planet? -> " + (mercury instanceof Planet));
+        System.out.println("Apakah mercury IS-A Mercury? -> " + (mercury instanceof Mercury));
+
+        System.out.println("----------------------------------------");
+
+        Jupiter jupiter = new Jupiter();
+        System.out.println("Apakah jupiter IS-A Objek? -> " + (jupiter instanceof Object));
+        System.out.println("Apakah jupiter IS-A Planet? -> " + (jupiter instanceof Planet));
+        System.out.println("Apakah jupiter IS-A Jupiter? -> " + (jupiter instanceof Jupiter));
+
+        System.out.println("----------------------------------------");
+
+        planet.satelite();
+
+        mercury.satelite();
+        mercury.satelite(0);
+
+        jupiter.satelite();
+        jupiter.satelite(79);
+
+        System.out.println("----------------------------------------");
+
+        Jupiter satelite1 = new Jupiter("io");
+        Jupiter satelite2 = new Jupiter("europa");
+        Jupiter satelite3 = new Jupiter("ganymede");
+
+        System.out.println(satelite1.toString());
+        System.out.println(satelite2.toString());
+        System.out.println(satelite3.toString());
+
+        System.out.println("satelite1 equals satelite2 ? " + satelite1.equals(satelite2));
+        System.out.println("satelite1 equals satelite3 ? " + satelite1.equals(satelite3));
+    }
+}
