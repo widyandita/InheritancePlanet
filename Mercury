@@ -1,0 +1,39 @@
+package inheritance.java;
+
+public class Mercury extends Planet {
+    public Mercury() {
+        super();
+        System.out.println("construct Mercury");
+    }
+
+    //overriding
+    public void satelite() {
+        System.out.println("Mercury memiliki ... satelite");
+    }
+
+    //overloading
+    public void satelite(Integer satelite) {
+        System.out.println("Jumlah satelite mercury " + satelite);
+    }
+
+    private String name;
+
+    public Mercury(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString () {
+        return "Satelite name: " + name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Mercury) {
+            Mercury other = (Mercury) obj;
+            return this.name.equals(other.name);
+        } else {
+            return false;
+        }
+    }
+}
