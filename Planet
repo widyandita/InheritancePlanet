@@ -1,0 +1,11 @@
+package inheritance.java;
+
+public class Planet {
+    public Planet() {
+        System.out.println("construct Planet");
+    }
+
+    public void satelite() {
+        System.out.println("Planet mempunyai satelite...");
+    }
+}
